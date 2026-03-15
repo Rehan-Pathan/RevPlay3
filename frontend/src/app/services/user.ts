@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class User {
+export class User { 
 
   private baseUrl = 'http://localhost:8080/users';
 
