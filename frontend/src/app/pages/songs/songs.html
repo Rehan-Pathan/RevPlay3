@@ -38,7 +38,7 @@
       </div>
 
       <div class="song-artist">
-        {{ song.artist?.username }}
+        {{ song.artistUsername }}
       </div>
 
       <span class="badge bg-secondary mt-1">
@@ -63,10 +63,12 @@
       <select class="form-select form-select-sm dark-select mb-1"
               [(ngModel)]="selectedPlaylist[song.id]">
         <option [ngValue]="null">Playlist</option>
+
         <option *ngFor="let p of playlists"
                 [ngValue]="p.id">
           {{ p.name }}
         </option>
+
       </select>
 
       <button class="btn btn-sm btn-outline-light w-100"
@@ -77,15 +79,15 @@
     </div>
 
     <!-- Delete -->
-    <div *ngIf="isArtist && currentUsername === song.artist?.username"
-         class="song-delete">
+   <div *ngIf="isArtist && currentUsername === song?.artistUsername"
+     class="song-delete">
 
-      <button class="btn btn-sm btn-danger"
-              (click)="deleteSong(song.id)">
-        Delete
-      </button>
+  <button class="btn btn-sm btn-danger"
+          (click)="deleteSong(song.id)">
+    Delete
+  </button>
 
-    </div>
+</div>
 
   </div>
 
